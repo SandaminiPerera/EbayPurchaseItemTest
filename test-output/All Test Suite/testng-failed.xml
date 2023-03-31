@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [All Test Suite]" parallel="tests">
+  <parameter name="url" value="https://www.ebay.com/"/>
+  <test thread-count="2" name="Chrome Test(failed)" parallel="tests">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="CartPageTest">
+        <methods>
+          <include name="validateSubTotal"/>
+          <include name="validatePrice"/>
+          <include name="printShipping"/>
+          <include name="validateQuantity"/>
+          <include name="validateItemName"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- CartPageTest -->
+      <class name="HomePageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="verifyingURL"/>
+        </methods>
+      </class> <!-- HomePageTest -->
+      <class name="ItemPageTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="printItemDetails"/>
+          <include name="validateAddToCartButton"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- ItemPageTest -->
+    </classes>
+  </test> <!-- Chrome Test(failed) -->
+</suite> <!-- Failed suite [All Test Suite] -->
